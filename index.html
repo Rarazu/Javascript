@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Javascript</title>
+    <!-- call bootstrap style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- javascript area -->
+    <script>
+        function buttonClick() {
+            alert("Haraa harah");
+        }
+
+        function confirmation() {
+            let konfirmasi = confirm("apakah anda suka beomgyu?");
+            if (konfirmasi === true) {
+                alert("aamiin bissmillah dapet");
+            } else {
+                alert("guduk rara iki pasti");
+            }
+        }
+
+        function getName() {
+            let bias = prompt("Silahkan ketik bias anda");
+            alert("oh bias kamu "+ bias);
+        }
+        // let -> dapat menampung semua jenis  variabel
+        // atau untuk deklarasi veriabel yg menyimpan berbagai tipe data
+
+        function  hitungLuas() {
+            let alas = document.getElementById("alas_segitiga").value;
+            let tinggi = document.getElementById("tinggi_segitiga").value;
+            // number() ->  konversi ke bentuk numeric
+            let hasil = 0.5 * Number(alas) * Number(tinggi);
+            document.getElementById("result").innerHTML =
+            "Luas Segitiga adalah " + hasil;
+            //perbedaan .value dan .innerHTML
+            //.value -> jika elemen tg dipanggil  berupa <input> / <select>
+            // .innerHTML -> jika element yg dipanggil berupa isi yg ada di dalam tag HTML
+        }
+    </script>
+</head>
+<body>
+   <button onclick="buttonClick()" class="btn btn-danger">
+       Click Me
+   </button>
+
+   <button class="btn btn-warning" onclick="confirmation()">
+       Click for confirmation!
+   </button>
+
+   <button class="btn btn-success" onclick="getName()">
+       Fill your bias
+   </button>
+
+   <!-- card menghitung luas segitiga -->
+   <div class="card col-lg-3 col-md-6 m-2">
+       <!-- card header -->
+       <div class="card-header bg-dark">
+           <h3 class="text-white">Hitung Segitiga</h3>
+       </div>
+
+       <!-- card body -->
+       <div class="card-body">
+           Masukkan Nilai Alas Segitiga
+           <input type="number" class="form-control mb-2" id="alas_segitiga" />
+
+           Masukkan Nilai Tinggi Segitiga
+           <input type="number" class="form-control mb-2" id="tinggi_segitiga">
+
+           <button class="btn btn-primary btn-block" onclick="hitungLuas()">
+               Hitung luas
+           </button>
+       </div>
+
+       <!-- card footer -->
+       <div class="card-footer">
+           <!-- tampilkan hasil -->
+           <h5 class="text-info" id="result">
+               <!-- inner -->
+           </h5>
+       </div>
+   </div>
+</body>
+</html>

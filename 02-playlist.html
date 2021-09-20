@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        function playButton(currentList) {
+            // currentList digunakan untuk menyimpan audio yg
+            // saat ini diputar
+            let musics = document.getElementsByTagName("audio");
+            for (let index = 0; index < musics.length; index++) {
+                if (musics[index] !== currentList) {
+                    musics[index].pause();
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- card header -->
+            <div class="card-header bg-primary">
+                <h3 class="text-white text-center">My Playlist</h3>
+            </div>
+        </div>
+
+        <!-- card body-->
+        <div class="card-body">
+            <ul class="list-group">
+                <!-- list pertama -->
+                <li class="list-group-item">
+                    <div class="row">
+                        <!-- div utk gambar -->
+                        <div class="col-lg-4 col-md-6">
+                            <img src="gambar/lenka.jpg" 
+                            width="200" height="200"/>
+                        </div>
+                        <!-- div utk judul dan kontrol lagu -->
+                        <div class="col-lg-8 col-md-10">
+                            <h5 class="text-info">
+                            The Show
+                             </h5>
+                           <audio src="song/y2mate.com - The Show  Lenka Lirik Lagu Terjemahan.mp3"
+                              controls onplay="playButton(this)">
+                           </audio>
+                         </div>
+                    </div>
+                </li>
+
+                 <!-- list kedua -->
+                 <li class="list-group-item">
+                    <div class="row">
+                        <!-- div utk gambar -->
+                        <div class="col-lg-4 col-md-6">
+                            <img src="gambar/giveup.jpg" 
+                            width="200" height="200"/>
+                        </div>
+                        <!-- div utk judul dan kontrol lagu -->
+                        <div class="col-lg-8 col-md-10">
+                            <h5 class="text-info">
+                                Don't Give Up On Me
+                             </h5>
+                           <audio src="song/y2meta.com - Don't Give Up On Me - Andy Grammer (Lirik Lagu Terjemahan) (256 kbps).mp3"
+                           controls onplay="playButton(this)">
+                           </audio>
+                         </div>
+                    </div>
+                </li>
+
+                <!-- list ketiga -->
+                <li class="list-group-item">
+                    <div class="row">
+                        <!-- div utk gambar -->
+                        <div class="col-lg-4 col-md-6">
+                            <img src="gambar/yummy.jpg" 
+                            width="200" height="200"/>
+                        </div>
+                        <!-- div utk judul dan kontrol lagu -->
+                        <div class="col-lg-8 col-md-10">
+                            <h5 class="text-info">
+                                Yummy 
+                             </h5>
+                           <audio src="song/Justin Bieber - Yummy.mp3"
+                              controls onplay="playButton(this)">
+                           </audio>
+                         </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
